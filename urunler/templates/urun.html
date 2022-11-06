@@ -1,0 +1,23 @@
+{% extends "index.html" %}
+{% load static %}
+
+{% block title %}
+  <title>Neos Ticaret Ürün Sayfası</title>
+{% endblock title %}
+
+{% block content %}
+      <div class="container">
+        <div class="row border mt-5">
+            {% for urun in urun %}
+                <div class="col-4">
+                    <img src="{{urun.resim.url}}" width="100%" height="200" alt="">
+                </div>
+                <div class="col-8">
+                    <p>{{urun.isim}}</p>
+                    <p>{{urun.aciklama}}</p>
+                    <p>{{urun.fiyat}}</p>
+                </div>
+            {% endfor %}
+        </div>
+      </div>
+{% endblock content %}
